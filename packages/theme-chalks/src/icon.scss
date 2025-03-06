@@ -1,0 +1,19 @@
+@use "mixins/mixin.scss" as *;
+@keyframes transform {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@include b(icon) {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  height: 1em;
+  width: 1em;
+  svg.loading {
+    animation: transform 1s linear infinite;
+  }
+}

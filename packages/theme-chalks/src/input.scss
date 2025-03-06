@@ -1,0 +1,58 @@
+@use "mixins/mixin.scss" as *;
+@use "common/var.scss" as *;
+
+@include b(input) {
+  // z-input
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+
+  @include e(wrapper) {
+    box-sizing: border-box;
+    display: inline-flex;
+    border: 1px solid #ccc;
+    flex: 1;
+    align-items: center;
+    position: relative;
+  }
+
+  @include e(suffix) {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+  @include e(prefix) {
+    display: inline-flex;
+    margin-left: 5px;
+  }
+
+  @include e(inner) {
+    display: inline-flex;
+    outline: none;
+    border: none;
+    background: none;
+    appearance: none;
+    padding: 0 10px;
+    width: 100%;
+    height: 30px;
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: #eee;
+      border-radius: 4px;
+    }
+  }
+}
+@include b(input-group) {
+  @include e(append) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    box-shadow: 0 0 0 1px #ccc inset;
+  }
+  @include e(prepend) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    box-shadow: 0 0 0 1px #ccc inset;
+  }
+}
